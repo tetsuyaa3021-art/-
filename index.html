@@ -20,175 +20,54 @@
       --radius:16px;
     }
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
-    header{
-      position:sticky; top:0; z-index:50;
-      background:#fff;
-      border-bottom:1px solid var(--line);
-    }
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;background:var(--bg);color:var(--text);}
+    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);}
     .wrap{max-width:1280px;margin:0 auto;padding:14px 16px}
     .title{font-size:18px;font-weight:800;margin:0 0 4px}
     .sub{color:var(--muted);font-size:12px;line-height:1.4;margin:0}
-    .toolbar{
-      display:flex; gap:10px; flex-wrap:wrap;
-      margin-top:10px;
-    }
-    button{
-      border:1px solid var(--line);
-      background:#fff;
-      padding:10px 12px;
-      border-radius:999px;
-      cursor:pointer;
-      font-weight:700;
-    }
-    button.primary{
-      background:var(--accent);
-      border-color:var(--accent);
-      color:#fff;
-    }
+    .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    button{border:1px solid var(--line);background:#fff;padding:10px 12px;border-radius:999px;cursor:pointer;font-weight:700}
+    button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
     button:active{transform:translateY(1px)}
-    .grid{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:14px;
-      padding:14px 16px 22px;
-      max-width:1280px;
-      margin:0 auto;
-    }
-    @media (max-width: 980px){
-      .grid{grid-template-columns:1fr}
-    }
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:14px;
-    }
+    .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;padding:14px 16px 22px;max-width:1280px;margin:0 auto;}
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr} }
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;}
     .card h2{font-size:14px;margin:0 0 10px}
-    .hint{
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.55;
-      margin:0 0 10px;
-    }
-    .tabs{
-      display:flex; gap:8px; flex-wrap:wrap;
-      margin:10px 0 12px;
-    }
-    .tab{
-      padding:10px 12px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:#fff;
-      cursor:pointer;
-      font-weight:800;
-      font-size:12px;
-      color:#111827;
-    }
-    .tab.active{
-      border-color:var(--accent);
-      box-shadow:0 0 0 3px rgba(37,99,235,.12);
-    }
+    .hint{color:var(--muted);font-size:12px;line-height:1.55;margin:0 0 10px}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 12px}
+    .tab{padding:10px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;font-weight:800;font-size:12px;color:#111827}
+    .tab.active{border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
     .tabpane{display:none}
     .tabpane.active{display:block}
     .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     @media (max-width: 820px){ .row{grid-template-columns:1fr} }
     label{display:block;font-size:12px;color:var(--muted);margin:10px 0 6px}
     input[type="number"], input[type="text"], select{
-      width:100%;
-      padding:10px 10px;
-      border:1px solid var(--line);
-      border-radius:12px;
-      font-size:14px;
-      outline:none;
-      background:#fff;
-      color:var(--text);
+      width:100%; padding:10px 10px; border:1px solid var(--line); border-radius:12px;
+      font-size:14px; outline:none; background:#fff; color:var(--text);
     }
     input[type="range"]{width:100%}
-    .tableWrap{
-      width:100%;
-      overflow-x:auto;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:#fff;
-    }
-    table{
-      width:100%;
-      border-collapse:separate;
-      border-spacing:0;
-      min-width: 980px; /* 横いっぱいで見やすく */
-    }
-    th, td{
-      border-bottom:1px solid var(--line);
-      padding:8px 10px;
-      text-align:left;
-      font-size:12px;
-      vertical-align:middle;
-      white-space:nowrap;
-    }
-    th{
-      position:sticky; top:0;
-      background:#fafafa;
-      z-index:2;
-      font-weight:900;
-    }
-    td input{
-      min-width:120px; /* 入力値が切れない */
-    }
+    .tableWrap{width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:#fff}
+    table{width:100%;border-collapse:separate;border-spacing:0;min-width:980px}
+    th, td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;font-size:12px;vertical-align:middle;white-space:nowrap}
+    th{position:sticky;top:0;background:#fafafa;z-index:2;font-weight:900}
+    td input{min-width:140px}
     .btns{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
     .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px}
     @media (max-width: 980px){ .kpis{grid-template-columns:1fr} }
-    .kpi{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:10px;
-      background:#fff;
-    }
+    .kpi{border:1px solid var(--line);border-radius:14px;padding:10px;background:#fff}
     .kpi .t{font-size:12px;color:var(--muted);font-weight:700}
     .kpi .v{font-size:26px;font-weight:900;margin-top:2px}
     .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 6px}
-    .pill{
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:8px 10px;
-      font-size:12px;
-      font-weight:800;
-      background:#fff;
-    }
-    .alert{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:10px;
-      background:#fff;
-      margin:10px 0 0;
-      font-size:12px;
-      line-height:1.55;
-    }
+    .pill{border:1px solid var(--line);border-radius:999px;padding:8px 10px;font-size:12px;font-weight:800;background:#fff}
+    .alert{border:1px solid var(--line);border-radius:14px;padding:10px;background:#fff;margin:10px 0 0;font-size:12px;line-height:1.55}
     .alert.good{border-color:rgba(22,163,74,.4); background:rgba(22,163,74,.06)}
     .alert.warn{border-color:rgba(245,158,11,.5); background:rgba(245,158,11,.08)}
     .alert.bad{border-color:rgba(239,68,68,.45); background:rgba(239,68,68,.06)}
-    .chartCard{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:10px;
-      margin-top:10px;
-      background:#fff;
-    }
+    .chartCard{border:1px solid var(--line);border-radius:14px;padding:10px;margin-top:10px;background:#fff}
     .chartCard h3{margin:0 0 8px;font-size:13px}
     .small{font-size:12px;color:var(--muted)}
-    .aiBox{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:12px;
-      background:#fff;
-      margin-top:10px;
-    }
+    .aiBox{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff;margin-top:10px}
     .aiBox h3{margin:0 0 6px;font-size:13px}
     ol{margin:6px 0 0 20px}
     .fileInput{display:none}
@@ -203,6 +82,7 @@
       <button id="btnCsvExport">CSV保存</button>
       <button id="btnCsvImport">CSV読込</button>
       <input id="csvFile" class="fileInput" type="file" accept=".csv,text/csv" />
+      <button id="btnJumpOut">結果へ移動</button>
       <button id="btnPrint">印刷（PDF）</button>
       <button id="btnSample">サンプル</button>
       <button id="btnClear">クリア</button>
@@ -216,9 +96,10 @@
   <section class="card">
     <h2>① 実績入力（年次）</h2>
     <p class="hint">
-      ・<b>人員</b>は「平均人数（その年の平均FTE/在籍稼働人数）」を推奨（のべ人数ではなく、平均でOK）。<br>
-      ・外注対象売上が取れない前提：外注は<b>原価（仕入）</b>として反映。外注比率は「原価中の外注比率」で表現します。<br>
-      ・利益はまず「粗利」で十分。加えて販管費/間接/減価償却/電力などは「経営モデル（売上比）」として見込み、経営利益率（モデル）を出します。
+      ・<b>人員</b>は「平均人数（その年の平均FTE/在籍稼働人数）」を推奨（のべ人数ではなく平均）。<br>
+      ・外注対象売上が取れない前提：外注は<b>原価（仕入）</b>として反映。外注比率は「原価中の外注比率」で表現。<br>
+      ・加工の生産性は <b>付加価値/生産時間</b>（簡易）で扱います。付加価値＝売上−材料−外注（※労務・経費は差し引かない）。<br>
+      ・粗利だけでは不足する販管費/間接/減価償却/電力などは「経営モデル（売上比）」として仮置きし、経営利益率（モデル）を出します。
     </p>
 
     <div class="tabs">
@@ -226,7 +107,6 @@
       <button class="tab" data-tab="mach">加工（実績）</button>
       <button class="tab" data-tab="model">経営モデル（相場割合）</button>
       <button class="tab" data-tab="future">未来推計（スライダー）</button>
-      <button class="tab" data-tab="out">出力（結果/グラフ）</button>
     </div>
 
     <!-- CAST -->
@@ -320,7 +200,10 @@
 
     <!-- FUTURE -->
     <div class="tabpane" id="tab-future">
-      <p class="hint">最新年（実績）を基準に、未来をスライダーで調整します。会社共通の必要改定率を算出します。</p>
+      <p class="hint">
+        最新年（実績）を基準に、未来をスライダーで調整します。会社共通の必要改定率を算出します。<br>
+        ※外注は「外注のみ別上昇率」で推計（材料・経費とは切り分け）。
+      </p>
 
       <label>労務費上昇（%）</label>
       <input id="f_laborUp" type="range" min="0" max="30" value="10" />
@@ -330,9 +213,13 @@
       <input id="f_prodImprove" type="range" min="0" max="20" value="3" />
       <div class="small">現在：<span id="f_prodImprove_v">3</span>%</div>
 
-      <label>その他コスト上昇（材料・経費・外注一律）（%）</label>
+      <label>材料・経費の上昇（%）</label>
       <input id="f_otherUp" type="range" min="0" max="20" value="2" />
       <div class="small">現在：<span id="f_otherUp_v">2</span>%</div>
+
+      <label>外注仕入の上昇（%）</label>
+      <input id="f_outUp" type="range" min="0" max="30" value="5" />
+      <div class="small">現在：<span id="f_outUp_v">5</span>%</div>
 
       <label>目標 経営利益率（%）※モデル値を上書き</label>
       <input id="f_targetOp" type="range" min="0" max="15" value="5" />
@@ -346,12 +233,6 @@
           <div class="pill">総原価上昇（概算）：<span id="k_labor10_costup">-</span></div>
         </div>
       </div>
-    </div>
-
-    <!-- OUT (placeholder, actual output on right card) -->
-    <div class="tabpane" id="tab-out">
-      <p class="hint">右側に移していた結果を、このタブにもまとめています（縦長でOK）。「更新」で反映されます。</p>
-      <div id="outMirror"></div>
     </div>
   </section>
 
@@ -378,14 +259,14 @@
       <div class="pill">鋳造 歩留：<span id="k_cast_yield">-</span></div>
       <div class="pill">鋳造 kg/H：<span id="k_cast_kgh">-</span></div>
       <div class="pill">外注比率（原価中）：<span id="k_out_ratio">-</span></div>
-      <div class="pill">加工 時間/H：<span id="k_mach_rate">-</span></div>
+      <div class="pill">加工 付加価値/生産H：<span id="k_mach_va_rate">-</span></div>
     </div>
 
     <div id="alertBox" class="alert">更新するとここに要点が出ます。</div>
 
     <div class="chartCard">
       <h3>根拠グラフ（実績）｜人件費指数・生産性指数</h3>
-      <p class="small">生産性指数：鋳造=kg/H、加工=生産時間Hあたり売上（簡易）。人件費指数：労務費/就業H（時間あたり）。</p>
+      <p class="small">生産性：鋳造=kg/H、加工=付加価値/生産H。人件費：労務費/就業H（時間あたり）。</p>
       <canvas id="ch_core" height="140"></canvas>
     </div>
 
@@ -422,7 +303,7 @@
     </div>
 
     <div class="chartCard">
-      <h3>未来推計｜必要改定率の推移（簡易：単年）</h3>
+      <h3>未来推計｜必要改定率（単年）</h3>
       <canvas id="ch_need" height="130"></canvas>
     </div>
 
@@ -439,7 +320,6 @@
   // ---------- helpers ----------
   const $ = (id)=>document.getElementById(id);
   const fmtPct = (x)=> (isFinite(x)? (x*100).toFixed(1)+"%":"-");
-  const fmtPct0 = (x)=> (isFinite(x)? (x*100).toFixed(1)+"%":"-");
   const fmtNum = (x, d=0)=> (isFinite(x)? Number(x).toLocaleString("ja-JP",{maximumFractionDigits:d}):"-");
   const clamp = (v,min,max)=>Math.max(min,Math.min(max,v));
   function n(v){ const x=parseFloat(v); return isFinite(x)?x:0; }
@@ -447,7 +327,9 @@
   // Chart.js instances (destroy before redraw)
   const charts = {};
   function renderChart(id, cfg){
-    const ctx = $(id).getContext("2d");
+    const el = $(id);
+    if(!el) return;
+    const ctx = el.getContext("2d");
     if(charts[id]) charts[id].destroy();
     charts[id] = new Chart(ctx, cfg);
   }
@@ -517,17 +399,22 @@
       laborUp: n($("f_laborUp").value)/100,
       prodImprove: n($("f_prodImprove").value)/100,
       otherUp: n($("f_otherUp").value)/100,
+      outUp: n($("f_outUp").value)/100,
       targetOp: n($("f_targetOp").value)/100
     };
   }
 
-  // ---------- calculations ----------
   function latestYearUnion(castRows, machRows){
     const years = new Set();
     castRows.forEach(r=>years.add(r.year));
     machRows.forEach(r=>years.add(r.year));
     if(years.size===0) return null;
     return Math.max(...years);
+  }
+
+  function machiningValueAdded(m){
+    if(!m) return 0;
+    return (m.sales||0) - (m.mat||0) - (m.out||0);
   }
 
   function totalsForYear(castRows, machRows, year){
@@ -542,39 +429,31 @@
 
     const workH = (c?c.workH:0) + (m?m.workH:0);
 
-    // productivity metrics
-    // casting productivity: kg per hour
     const castKgh = (c && c.workH>0) ? (c.prodKg / c.workH) : NaN;
     const castYield = (c && c.meltKg>0) ? (c.prodKg / c.meltKg) : NaN;
 
-    // machining productivity: sales per production hour (simplified)
-    const machSalesPerProdH = (m && m.prodH>0) ? (m.sales / m.prodH) : NaN;
+    const machVAperProdH = (m && m.prodH>0) ? (machiningValueAdded(m) / m.prodH) : NaN;
 
-    // labor per unit indices
-    const castLaborPerKg = (c && c.prodKg>0) ? (c.labor / c.prodKg) : NaN; // 円/kg
-    const machLaborPerProdH = (m && m.prodH>0) ? (m.labor / m.prodH) : NaN; // 円/生産時間H
+    const castLaborPerKg = (c && c.prodKg>0) ? (c.labor / c.prodKg) : NaN;
+    const machLaborPerProdH = (m && m.prodH>0) ? (m.labor / m.prodH) : NaN;
 
-    // hourly labor (company)
     const laborPerH = (workH>0) ? (labor / workH) : NaN;
 
     const cost = mat + labor + exp + out;
-    const gp = sales - cost; // 粗利（外注含む）
+    const gp = sales - cost;
     const gm = (sales>0) ? gp/sales : NaN;
 
     return {
-      year, c, m,
-      sales, labor, mat, exp, out,
+      year, sales, labor, mat, exp, out,
       cost, gp, gm,
       castKgh, castYield,
-      machSalesPerProdH,
+      machVAperProdH,
       castLaborPerKg, machLaborPerProdH,
       laborPerH
     };
   }
 
-  function otherRatios(model){
-    return clamp(model.sga + model.indirect + model.depr + model.power, 0, 0.95);
-  }
+  function otherRatios(model){ return clamp(model.sga + model.indirect + model.depr + model.power, 0, 0.95); }
 
   function operatingMarginModel(yearTot, model){
     const r = otherRatios(model);
@@ -584,7 +463,6 @@
     return {opProfit, opm, otherCost, otherRatio:r};
   }
 
-  // required sales to achieve target op margin with given costs and other ratio r
   function requiredSalesForTarget(costNoOther, r, targetMargin){
     const denom = (1 - r - targetMargin);
     if(denom <= 0) return Infinity;
@@ -598,21 +476,20 @@
     const r = otherRatios(model);
     const target = (future.targetOp>0 ? future.targetOp : model.targetOp);
 
-    // Apply future assumptions:
-    // labor: up - productivity improvement offsets (reduces effective increase)
     const laborFactor = (1 + future.laborUp) * (1 - future.prodImprove);
     const otherFactor = (1 + future.otherUp);
+    const outFactor = (1 + future.outUp);
 
     const labor = seriesLatest.labor * laborFactor;
     const mat = seriesLatest.mat * otherFactor;
     const exp = seriesLatest.exp * otherFactor;
-    const out = seriesLatest.out * otherFactor;
+    const out = seriesLatest.out * outFactor;
 
     const costNoOther = mat + labor + exp + out;
     const needSales = requiredSalesForTarget(costNoOther, r, target);
     const needRate = (isFinite(needSales) && baseSales>0) ? (needSales/baseSales - 1) : NaN;
 
-    return {needRate, needSales, costNoOther, r, target, laborFactor, otherFactor};
+    return {needRate, needSales, costNoOther, r, target};
   }
 
   function laborPlus10Need(seriesLatest, model){
@@ -620,12 +497,7 @@
     const r = otherRatios(model);
     const target = model.targetOp;
 
-    const mat = seriesLatest.mat;
-    const exp = seriesLatest.exp;
-    const out = seriesLatest.out;
-    const labor = seriesLatest.labor * 1.10;
-
-    const costNoOther = mat + exp + out + labor;
+    const costNoOther = seriesLatest.mat + seriesLatest.exp + seriesLatest.out + (seriesLatest.labor * 1.10);
     const needSales = requiredSalesForTarget(costNoOther, r, target);
     const needRate = (isFinite(needSales) && baseSales>0) ? (needSales/baseSales - 1) : NaN;
 
@@ -636,190 +508,109 @@
   }
 
   function buildIndices(castRows, machRows){
-    // Build per-year indices based on first year available as base (100)
     const years = [...new Set([...castRows.map(r=>r.year), ...machRows.map(r=>r.year)])].sort((a,b)=>a-b);
     if(years.length===0) return null;
 
     const points = years.map(y=>totalsForYear(castRows, machRows, y));
-
-    // base values
     const base = points[0];
     const baseLaborPerH = base.laborPerH || NaN;
-
-    // productivity base: casting kg/H if available else machining sales/prodH else fallback to sales/workH
-    const baseProd = (isFinite(base.castKgh) ? base.castKgh :
-                      isFinite(base.machSalesPerProdH) ? base.machSalesPerProdH :
-                      (base.sales>0 && (base.c?.workH||0)+(base.m?.workH||0)>0) ? base.sales/((base.c?.workH||0)+(base.m?.workH||0)) : NaN);
+    const baseProd = (isFinite(base.castKgh) ? base.castKgh : isFinite(base.machVAperProdH) ? base.machVAperProdH : NaN);
 
     const idx = points.map(p=>{
-      const laborH = p.laborPerH;
-      const laborIdx = (isFinite(baseLaborPerH) && baseLaborPerH>0 && isFinite(laborH)) ? laborH/baseLaborPerH*100 : NaN;
-
-      const prod = (isFinite(p.castKgh) ? p.castKgh :
-                    isFinite(p.machSalesPerProdH) ? p.machSalesPerProdH :
-                    NaN);
+      const laborIdx = (isFinite(baseLaborPerH) && baseLaborPerH>0 && isFinite(p.laborPerH)) ? p.laborPerH/baseLaborPerH*100 : NaN;
+      const prod = (isFinite(p.castKgh) ? p.castKgh : isFinite(p.machVAperProdH) ? p.machVAperProdH : NaN);
       const prodIdx = (isFinite(baseProd) && baseProd>0 && isFinite(prod)) ? prod/baseProd*100 : NaN;
 
-      // unit labor index
-      const unit = (isFinite(p.castLaborPerKg) ? p.castLaborPerKg :
-                    isFinite(p.machLaborPerProdH) ? p.machLaborPerProdH :
-                    NaN);
-      const baseUnit = (isFinite(base.castLaborPerKg) ? base.castLaborPerKg :
-                        isFinite(base.machLaborPerProdH) ? base.machLaborPerProdH :
-                        NaN);
+      const unit = (isFinite(p.castLaborPerKg) ? p.castLaborPerKg : isFinite(p.machLaborPerProdH) ? p.machLaborPerProdH : NaN);
+      const baseUnit = (isFinite(base.castLaborPerKg) ? base.castLaborPerKg : isFinite(base.machLaborPerProdH) ? base.machLaborPerProdH : NaN);
       const unitIdx = (isFinite(baseUnit) && baseUnit>0 && isFinite(unit)) ? unit/baseUnit*100 : NaN;
 
-      return {year:p.year, laborIdx, prodIdx, unitIdx, labor:p.labor, prodRaw:prod, laborPerH: laborH};
+      return {year:p.year, laborIdx, prodIdx, unitIdx, labor:p.labor};
     });
 
-    return {years, points, idx};
+    return {years, idx};
   }
 
-  // ---------- charts ----------
   function drawCharts(castRows, machRows, model, future){
     const indices = buildIndices(castRows, machRows);
     if(!indices){
-      // clear charts to avoid confusion
-      ["ch_core","ch_core2","ch_labor_trend","ch_prod_trend","ch_unit_labor","ch_cost_pie_all","ch_cost_pie_in","ch_need"]
-        .forEach(id=>{
-          if(charts[id]) { charts[id].destroy(); delete charts[id]; }
-        });
+      Object.keys(charts).forEach(k=>{ charts[k].destroy(); delete charts[k]; });
       return null;
     }
 
     const labels = indices.idx.map(d=>String(d.year));
 
-    // core index chart
     renderChart("ch_core", {
       type:"line",
-      data:{
-        labels,
-        datasets:[
-          {label:"人件費指数（基準=100）", data: indices.idx.map(d=>d.laborIdx), tension:.25, spanGaps:true},
-          {label:"生産性指数（基準=100）", data: indices.idx.map(d=>d.prodIdx), tension:.25, spanGaps:true},
-        ]
-      },
-      options:{
-        responsive:true,
-        plugins:{legend:{display:true}},
-        scales:{y:{beginAtZero:false}}
-      }
+      data:{ labels, datasets:[
+        {label:"人件費指数（基準=100）", data: indices.idx.map(d=>d.laborIdx), tension:.25, spanGaps:true},
+        {label:"生産性指数（基準=100）", data: indices.idx.map(d=>d.prodIdx), tension:.25, spanGaps:true},
+      ]},
+      options:{responsive:true, plugins:{legend:{display:true}}, scales:{y:{beginAtZero:false}}}
     });
 
-    // core slide (same but emphasized)
     renderChart("ch_core2", {
       type:"line",
-      data:{
-        labels,
-        datasets:[
-          {label:"生産性指数（基準=100）", data: indices.idx.map(d=>d.prodIdx), tension:.25, spanGaps:true},
-          {label:"人件費指数（基準=100）", data: indices.idx.map(d=>d.laborIdx), tension:.25, spanGaps:true},
-        ]
-      },
-      options:{
-        responsive:true,
-        plugins:{legend:{display:true}},
-        scales:{y:{beginAtZero:false}}
-      }
+      data:{ labels, datasets:[
+        {label:"生産性指数（基準=100）", data: indices.idx.map(d=>d.prodIdx), tension:.25, spanGaps:true},
+        {label:"人件費指数（基準=100）", data: indices.idx.map(d=>d.laborIdx), tension:.25, spanGaps:true},
+      ]},
+      options:{responsive:true, plugins:{legend:{display:true}}, scales:{y:{beginAtZero:false}}}
     });
 
-    // labor trend (absolute)
     renderChart("ch_labor_trend", {
       type:"line",
-      data:{
-        labels,
-        datasets:[
-          {label:"労務費（円）", data: indices.idx.map(d=>d.labor), tension:.25, spanGaps:true},
-        ]
-      },
-      options:{
-        responsive:true,
-        plugins:{legend:{display:true}},
-        scales:{y:{ticks:{callback:(v)=>fmtNum(v)}}}
-      }
+      data:{ labels, datasets:[{label:"労務費（円）", data: indices.idx.map(d=>d.labor), tension:.25, spanGaps:true}] },
+      options:{responsive:true, plugins:{legend:{display:true}}, scales:{y:{ticks:{callback:(v)=>fmtNum(v)}}}}
     });
 
-    // productivity trend index
     renderChart("ch_prod_trend", {
       type:"line",
-      data:{
-        labels,
-        datasets:[
-          {label:"生産性指数（基準=100）", data: indices.idx.map(d=>d.prodIdx), tension:.25, spanGaps:true},
-        ]
-      },
+      data:{ labels, datasets:[{label:"生産性指数（基準=100）", data: indices.idx.map(d=>d.prodIdx), tension:.25, spanGaps:true}] },
       options:{responsive:true, plugins:{legend:{display:true}}}
     });
 
-    // unit labor index
     renderChart("ch_unit_labor", {
       type:"line",
-      data:{
-        labels,
-        datasets:[
-          {label:"単位あたり労務費（指数=100）", data: indices.idx.map(d=>d.unitIdx), tension:.25, spanGaps:true},
-        ]
-      },
+      data:{ labels, datasets:[{label:"単位あたり労務費（指数=100）", data: indices.idx.map(d=>d.unitIdx), tension:.25, spanGaps:true}] },
       options:{responsive:true, plugins:{legend:{display:true}}}
     });
 
-    // pies use latest year totals
     const lastYear = latestYearUnion(castRows, machRows);
     const last = totalsForYear(castRows, machRows, lastYear);
-    const mat=last.mat, labor=last.labor, exp=last.exp, out=last.out;
 
-    // cost composition (all)
     renderChart("ch_cost_pie_all", {
       type:"doughnut",
-      data:{
-        labels:["材料費","労務費","経費","外注仕入"],
-        datasets:[{data:[mat,labor,exp,out]}]
-      },
+      data:{ labels:["材料費","労務費","経費","外注仕入"], datasets:[{data:[last.mat,last.labor,last.exp,last.out]}] },
       options:{responsive:true, plugins:{legend:{display:true}}}
     });
 
-    // internal only
-    const inSum = mat + labor + exp;
     renderChart("ch_cost_pie_in", {
       type:"doughnut",
-      data:{
-        labels:["材料費（内製）","労務費（内製）","経費（内製）"],
-        datasets:[{data:[mat,labor,exp]}]
-      },
+      data:{ labels:["材料費（内製）","労務費（内製）","経費（内製）"], datasets:[{data:[last.mat,last.labor,last.exp]}] },
       options:{responsive:true, plugins:{legend:{display:true}}}
     });
 
-    // future need (single point bar)
-    const op = operatingMarginModel(last, model);
     const fc = forecastNeed(last, model, future);
-
     renderChart("ch_need", {
       type:"bar",
-      data:{
-        labels:["必要改定率（共通）"],
-        datasets:[{label:"必要改定率", data:[fc.needRate*100]}]
-      },
-      options:{
-        responsive:true,
-        plugins:{legend:{display:false}},
-        scales:{y:{ticks:{callback:(v)=>v+"%"}}}
-      }
+      data:{ labels:["必要改定率（共通）"], datasets:[{label:"必要改定率", data:[fc.needRate*100]}] },
+      options:{responsive:true, plugins:{legend:{display:false}}, scales:{y:{ticks:{callback:(v)=>v+"%"}}}}
     });
 
-    return {lastYear, last, op, fc};
+    return {lastYear, last, fc};
   }
 
-  // ---------- AI-like comment (rule-based) ----------
-  function aiCommentFromMetrics(ctx){
-    const {last, op, fc} = ctx;
+  function aiCommentFromMetrics({last, op, fc}){
     const items = [];
+    const target = fc.target;
 
-    if(isFinite(op.opm) && isFinite(fc.target)){
-      const gap = (fc.target - op.opm);
+    if(isFinite(op.opm) && isFinite(target)){
+      const gap = (target - op.opm);
       if(gap > 0.01){
-        items.push(`【ギャップ】経営利益率（モデル）が目標未達（差分 ${(gap*100).toFixed(1)}pt）。まず「販管費/間接/電力/減価償却（モデル）」の妥当性を部長間で合意し、目標に対して必要改定率を説明可能にする。`);
+        items.push(`【ギャップ】経営利益率（モデル）が目標未達（差分 ${(gap*100).toFixed(1)}pt）。モデル（販管費/間接/電力/減価償却）の前提を部長間で合意してから、改定率の根拠を一本化。`);
       }else{
-        items.push(`【現状】経営利益率（モデル）は目標近辺。未来推計で「労務費上昇」と「改善で吸収可能な範囲」を整理し、改定率の最小化を示すと反論されにくい。`);
+        items.push(`【現状】経営利益率（モデル）は目標近辺。未来推計で「労務費上昇」と「改善で吸収可能な範囲」を明確化し、改定率の最小化を示すと反論されにくい。`);
       }
     }
 
@@ -827,39 +618,32 @@
     if(costTotal>0){
       const outRatio = last.out / costTotal;
       if(outRatio > 0.30){
-        items.push(`【外注】原価中の外注比率が高い（${(outRatio*100).toFixed(1)}%）。「外注コスト上昇＝価格転嫁の外部要因」と「内製労務費上昇＝内部要因」を分けて説明すると筋が通る。`);
+        items.push(`【外注】原価中の外注比率が高い（${(outRatio*100).toFixed(1)}%）。外注上昇率は内製労務とは切り分けて説明できる。`);
       }else{
-        items.push(`【内製】外注比率は相対的に高くない。内製原価構造（材料・労務・経費）に対する労務費上昇影響の説明が中心になる。`);
+        items.push(`【内製】外注比率は相対的に高くない。内製原価（材料・労務・経費）に対する労務費上昇影響の説明が中心。`);
       }
     }
 
     if(isFinite(last.castYield) && last.castYield < 0.85){
-      items.push(`【鋳造】歩留が ${(last.castYield*100).toFixed(1)}% と低め。改善余地がある一方「改善を継続しても労務費上昇が上回る」ことを核心スライド（生産性 vs 人件費）で示すと納得されやすい。`);
+      items.push(`【鋳造】歩留 ${(last.castYield*100).toFixed(1)}%。改善余地はあるが「改善を継続しても労務費上昇が上回る」ことを核心グラフで示す。`);
     }
 
     if(isFinite(fc.needRate)){
-      if(fc.needRate > 0.15){
-        items.push(`【未来】推計の必要改定率が ${(fc.needRate*100).toFixed(1)}% と大きい。①改定の段階導入（時期/対象）②改善施策のKPI（kg/H・労務/単位）③外注上昇の根拠（見積/実績）をセットで提示したい。`);
-      }else if(fc.needRate > 0.03){
-        items.push(`【未来】必要改定率は ${(fc.needRate*100).toFixed(1)}% 程度。対象範囲と実施時期を明確にし「改定率の根拠＝原価構造＋努力（改善）＋外部要因」の順で説明すると反論が減る。`);
-      }else{
-        items.push(`【未来】必要改定率は小さい。早めに合意形成し、年次で見直す運用（指数でモニタリング）にすると社内外とも進めやすい。`);
-      }
+      items.push(`【未来】スライダー条件の必要改定率（共通）： ${(fc.needRate*100).toFixed(1)}%。対象範囲・時期・改善KPI（kg/H・VA/生産H・単位労務）をセットで提示。`);
     }
 
-    const html = `
+    return `
       <div class="small">前提（最新年 ${last.year}）<br>
-      ・粗利率 ${fmtPct(last.gm)} / 経営利益率（モデル） ${fmtPct(op.opm)}（目標 ${(fc.target*100).toFixed(1)}%）<br>
+      ・粗利率 ${fmtPct(last.gm)} / 経営利益率（モデル） ${fmtPct(op.opm)}（目標 ${(target*100).toFixed(1)}%）<br>
       ・外注比率（原価中） ${(last.out/(last.mat+last.labor+last.exp+last.out)*100).toFixed(1)}% / 鋳造歩留 ${(isFinite(last.castYield)?(last.castYield*100).toFixed(1):"-")}% / 鋳造kg/H ${(isFinite(last.castKgh)?last.castKgh.toFixed(2):"-")}
       </div>
       <h4 style="margin:10px 0 6px">着目ポイント（自動抽出）</h4>
       <ol>${items.map(x=>`<li>${x}</li>`).join("")}</ol>
-      <div class="small" style="margin-top:8px">※外部AIは使っていません。入力値と算出結果からルールベースでコメント生成しています（社内共有向け）。</div>
+      <div class="small" style="margin-top:8px">※外部AIは使っていません（ルールベース生成）。</div>
     `;
-    return html;
   }
 
-  // ---------- CSV (simple sectioned format) ----------
+  // ---------- CSV ----------
   function toCSV(){
     const cast = readTableCast();
     const mach = readTableMach();
@@ -874,8 +658,10 @@
     mach.forEach(r=>{
       lines.push(["row","mach",r.year,r.labor,r.head,r.workH,"","",r.prodH,r.sales,r.mat,r.exp,r.out].join(","));
     });
-    lines.push(["set","model","","","","","","","","",model.sga,model.indirect,model.depr,model.power,model.targetOp,`"${(model.note||"").replaceAll('"','""')}"`].join(","));
-    lines.push(["set","future","","","","","","","","",future.laborUp,future.prodImprove,future.otherUp,future.targetOp].join(","));
+
+    const note = `"${(model.note||"").replaceAll('"','""')}"`;
+    lines.push(["set","model","","","","","","","","",model.sga,model.indirect,model.depr,model.power,model.targetOp,note].join(","));
+    lines.push(["set","future","","","","","","","","",future.laborUp,future.prodImprove,future.otherUp,future.outUp,future.targetOp].join(","));
     return lines.join("\n");
   }
 
@@ -891,17 +677,43 @@
     URL.revokeObjectURL(url);
   }
 
+  function addRowCast(pref={}){
+    addRow("tblCast", [
+      {step:"1", value: pref.year ?? ""},
+      {step:"1", value: pref.labor ?? ""},
+      {step:"0.1", value: pref.head ?? ""},
+      {step:"0.1", value: pref.workH ?? ""},
+      {step:"1", value: pref.prodKg ?? ""},
+      {step:"1", value: pref.meltKg ?? ""},
+      {step:"1", value: pref.sales ?? ""},
+      {step:"1", value: pref.mat ?? ""},
+      {step:"1", value: pref.exp ?? ""},
+      {step:"1", value: pref.out ?? ""},
+    ]);
+  }
+  function addRowMach(pref={}){
+    addRow("tblMach", [
+      {step:"1", value: pref.year ?? ""},
+      {step:"1", value: pref.labor ?? ""},
+      {step:"0.1", value: pref.head ?? ""},
+      {step:"0.1", value: pref.workH ?? ""},
+      {step:"0.1", value: pref.prodH ?? ""},
+      {step:"1", value: pref.sales ?? ""},
+      {step:"1", value: pref.exp ?? ""},
+      {step:"1", value: pref.out ?? ""},
+      {step:"1", value: pref.mat ?? ""},
+    ]);
+  }
+
   function fromCSV(text){
     const rows = text.split(/\r?\n/).filter(Boolean);
     if(rows.length<=1) return;
 
-    // clear tables
     $("tblCast").querySelector("tbody").innerHTML="";
     $("tblMach").querySelector("tbody").innerHTML="";
 
     for(let i=1;i<rows.length;i++){
       const line = rows[i];
-      // naive CSV parse (handles quoted note only at end)
       const parts = line.match(/(".*?"|[^,]+)(?=,|$)/g)?.map(s=>{
         if(s.startsWith('"') && s.endsWith('"')) return s.slice(1,-1).replaceAll('""','"');
         return s;
@@ -920,13 +732,9 @@
           addRowMach({year,labor,head,workH,prodH,sales,exp,out,mat});
         }
       }
+
       if(parts[0]==="set" && parts[1]==="model"){
-        // indices depend on our export; be defensive
-        const sga=n(parts[10])*100;
-        const indirect=n(parts[11])*100;
-        const depr=n(parts[12])*100;
-        const power=n(parts[13])*100;
-        const target=n(parts[14])*100;
+        const sga=n(parts[10])*100, indirect=n(parts[11])*100, depr=n(parts[12])*100, power=n(parts[13])*100, target=n(parts[14])*100;
         const note=(parts[15]||"");
         if(isFinite(sga)) $("m_sga").value = sga;
         if(isFinite(indirect)) $("m_indirect").value = indirect;
@@ -935,77 +743,38 @@
         if(isFinite(target)) $("m_targetOp").value = target;
         $("m_note").value = note;
       }
+
       if(parts[0]==="set" && parts[1]==="future"){
-        const laborUp=n(parts[10])*100;
-        const prodImprove=n(parts[11])*100;
-        const otherUp=n(parts[12])*100;
-        const target=n(parts[13])*100;
+        const laborUp=n(parts[10])*100, prodImprove=n(parts[11])*100, otherUp=n(parts[12])*100, outUp=n(parts[13])*100, target=n(parts[14])*100;
         if(isFinite(laborUp)) $("f_laborUp").value = laborUp;
         if(isFinite(prodImprove)) $("f_prodImprove").value = prodImprove;
         if(isFinite(otherUp)) $("f_otherUp").value = otherUp;
+        if(isFinite(outUp)) $("f_outUp").value = outUp;
         if(isFinite(target)) $("f_targetOp").value = target;
         syncFutureLabels();
       }
     }
   }
 
-  // ---------- UI / tabs ----------
+  // ---------- tabs ----------
   function setTab(name){
-    document.querySelectorAll(".tab").forEach(b=>{
-      b.classList.toggle("active", b.dataset.tab===name);
-    });
+    document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active", b.dataset.tab===name));
     document.querySelectorAll(".tabpane").forEach(p=>p.classList.remove("active"));
     $("tab-"+name).classList.add("active");
-
-    // mirror output card into left out tab
-    if(name==="out"){
-      $("outMirror").innerHTML = $("outCard").innerHTML;
-    }
   }
-  document.querySelectorAll(".tab").forEach(b=>{
-    b.addEventListener("click", ()=>setTab(b.dataset.tab));
-  });
+  document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click", ()=>setTab(b.dataset.tab)));
 
   function syncFutureLabels(){
     $("f_laborUp_v").textContent = $("f_laborUp").value;
     $("f_prodImprove_v").textContent = $("f_prodImprove").value;
     $("f_otherUp_v").textContent = $("f_otherUp").value;
+    $("f_outUp_v").textContent = $("f_outUp").value;
     $("f_targetOp_v").textContent = $("f_targetOp").value;
   }
-
-  ["f_laborUp","f_prodImprove","f_otherUp","f_targetOp"].forEach(id=>{
+  ["f_laborUp","f_prodImprove","f_otherUp","f_outUp","f_targetOp"].forEach(id=>{
     $(id).addEventListener("input", ()=>{ syncFutureLabels(); updateAll(); });
     $(id).addEventListener("change", ()=>{ syncFutureLabels(); updateAll(); });
   });
-
-  // ---------- rows add helpers ----------
-  function addRowCast(pref={}){
-    addRow("tblCast", [
-      {step:"1", value: pref.year ?? ""},      // year
-      {step:"1", value: pref.labor ?? ""},     // labor
-      {step:"0.1", value: pref.head ?? ""},    // head
-      {step:"0.1", value: pref.workH ?? ""},   // workH
-      {step:"1", value: pref.prodKg ?? ""},    // prodKg
-      {step:"1", value: pref.meltKg ?? ""},    // meltKg
-      {step:"1", value: pref.sales ?? ""},     // sales
-      {step:"1", value: pref.mat ?? ""},       // mat
-      {step:"1", value: pref.exp ?? ""},       // exp
-      {step:"1", value: pref.out ?? ""},       // out
-    ]);
-  }
-  function addRowMach(pref={}){
-    addRow("tblMach", [
-      {step:"1", value: pref.year ?? ""},      // year
-      {step:"1", value: pref.labor ?? ""},     // labor
-      {step:"0.1", value: pref.head ?? ""},    // head
-      {step:"0.1", value: pref.workH ?? ""},   // workH
-      {step:"0.1", value: pref.prodH ?? ""},   // prodH
-      {step:"1", value: pref.sales ?? ""},     // sales
-      {step:"1", value: pref.exp ?? ""},       // exp
-      {step:"1", value: pref.out ?? ""},       // out
-      {step:"1", value: pref.mat ?? ""},       // mat (optional)
-    ]);
-  }
 
   // ---------- main update ----------
   function updateAll(){
@@ -1027,27 +796,24 @@
     const op = operatingMarginModel(last, model);
     const fc = forecastNeed(last, model, future);
 
-    // KPIs
     $("k_gm").textContent = fmtPct(last.gm);
     $("k_opm").textContent = fmtPct(op.opm);
     $("k_need").textContent = isFinite(fc.needRate) ? (fc.needRate*100).toFixed(1)+"%" : "-";
 
-    // small KPIs
     $("k_cast_yield").textContent = isFinite(last.castYield) ? (last.castYield*100).toFixed(1)+"%" : "-";
     $("k_cast_kgh").textContent = isFinite(last.castKgh) ? last.castKgh.toFixed(2)+" kg/H" : "-";
+
     const costTotal = last.mat + last.labor + last.exp + last.out;
     $("k_out_ratio").textContent = (costTotal>0) ? (last.out/costTotal*100).toFixed(1)+"%" : "-";
-    $("k_mach_rate").textContent = isFinite(last.machSalesPerProdH) ? fmtNum(last.machSalesPerProdH,0)+" 円/生産H" : "-";
 
-    // labor +10%
+    $("k_mach_va_rate").textContent = isFinite(last.machVAperProdH) ? fmtNum(last.machVAperProdH,0)+" 円/生産H" : "-";
+
     const l10 = laborPlus10Need(last, model);
     $("k_labor10_need").textContent = isFinite(l10.needRate) ? (l10.needRate*100).toFixed(1)+"%" : "-";
     $("k_labor10_costup").textContent = isFinite(l10.costUp) ? (l10.costUp*100).toFixed(1)+"%" : "-";
 
-    // alert
     const target = (future.targetOp>0 ? future.targetOp : model.targetOp);
-    let cls="alert";
-    let msg = [];
+    let cls="alert"; let msg = [];
     if(isFinite(op.opm) && isFinite(target)){
       const gap = target - op.opm;
       if(gap <= 0){
@@ -1062,32 +828,20 @@
       }
     }
     if(isFinite(fc.needRate)){
-      msg.push(`未来推計（スライダー）による必要改定率（共通）： ${(fc.needRate*100).toFixed(1)}%。（労務上昇×改善相殺×その他上昇を反映）`);
+      msg.push(`未来推計（スライダー）必要改定率（共通）： ${(fc.needRate*100).toFixed(1)}%（労務上昇×改善相殺、材料/経費上昇、外注上昇を分離）。`);
     }
     $("alertBox").className = cls;
     $("alertBox").textContent = msg.join(" ");
 
-    // charts
-    const ctx = drawCharts(cast, mach, model, future);
-
-    // mirror output when on out tab
-    if($("tab-out").classList.contains("active")){
-      $("outMirror").innerHTML = $("outCard").innerHTML;
-    }
+    drawCharts(cast, mach, model, future);
   }
 
-  // ---------- safe event wiring ----------
-  function safeOn(id, ev, fn){
-    const el=$(id);
-    if(el) el.addEventListener(ev, fn);
-  }
-  safeOn("btnCalc","click", ()=>{
-    updateAll();
-    // 出力タブに自動移動（反映確認しやすい）
-    const outTab = document.querySelector('.tab[data-tab="out"]');
-    if(outTab) outTab.click();
-  });
+  function safeOn(id, ev, fn){ const el=$(id); if(el) el.addEventListener(ev, fn); }
+
+  safeOn("btnCalc","click", ()=>{ updateAll(); $("outCard").scrollIntoView({behavior:"smooth", block:"start"}); });
+  safeOn("btnJumpOut","click", ()=> $("outCard").scrollIntoView({behavior:"smooth", block:"start"}));
   safeOn("btnPrint","click", ()=>window.print());
+
   safeOn("addCast","click", ()=>{ addRowCast(); updateAll(); });
   safeOn("delCast","click", ()=>{ delRow("tblCast"); updateAll(); });
   safeOn("addMach","click", ()=>{ addRowMach(); updateAll(); });
@@ -1099,11 +853,7 @@
     const f=e.target.files?.[0];
     if(!f) return;
     const r=new FileReader();
-    r.onload=()=>{
-      fromCSV(String(r.result||""));
-      syncFutureLabels();
-      updateAll();
-    };
+    r.onload=()=>{ fromCSV(String(r.result||"")); syncFutureLabels(); updateAll(); };
     r.readAsText(f, "utf-8");
     e.target.value="";
   });
@@ -1112,42 +862,25 @@
     if(!confirm("入力をクリアします。よろしいですか？")) return;
     $("tblCast").querySelector("tbody").innerHTML="";
     $("tblMach").querySelector("tbody").innerHTML="";
-    $("m_sga").value=10;
-    $("m_indirect").value=6;
-    $("m_depr").value=3;
-    $("m_power").value=2;
-    $("m_targetOp").value=5.0;
-    $("m_note").value="";
-    $("f_laborUp").value=10;
-    $("f_prodImprove").value=3;
-    $("f_otherUp").value=2;
-    $("f_targetOp").value=5;
+    $("m_sga").value=10; $("m_indirect").value=6; $("m_depr").value=3; $("m_power").value=2; $("m_targetOp").value=5.0; $("m_note").value="";
+    $("f_laborUp").value=10; $("f_prodImprove").value=3; $("f_otherUp").value=2; $("f_outUp").value=5; $("f_targetOp").value=5;
     syncFutureLabels();
-    // seed one row each
-    addRowCast();
-    addRowMach();
+    addRowCast(); addRowMach();
     updateAll();
   });
 
   safeOn("btnSample","click", ()=>{
     $("tblCast").querySelector("tbody").innerHTML="";
     $("tblMach").querySelector("tbody").innerHTML="";
-    // sample 2024, 2025
+
     addRowCast({year:2024,labor:28000000,head:28,workH:52000,prodKg:1850000,meltKg:2250000,sales:180000000,mat:62000000,exp:22000000,out:18000000});
     addRowCast({year:2025,labor:31000000,head:29,workH:52000,prodKg:1920000,meltKg:2315000,sales:190000000,mat:65000000,exp:23000000,out:20000000});
+
     addRowMach({year:2024,labor:19000000,head:18,workH:36000,prodH:24000,sales:130000000,exp:14000000,out:12000000,mat:3000000});
     addRowMach({year:2025,labor:20500000,head:18.5,workH:36000,prodH:23500,sales:135000000,exp:14500000,out:13000000,mat:3200000});
 
-    $("m_sga").value=10;
-    $("m_indirect").value=6;
-    $("m_depr").value=3;
-    $("m_power").value=2;
-    $("m_targetOp").value=5.0;
-    $("m_note").value="サンプル（仮）";
-    $("f_laborUp").value=10;
-    $("f_prodImprove").value=3;
-    $("f_otherUp").value=2;
-    $("f_targetOp").value=5;
+    $("m_sga").value=10; $("m_indirect").value=6; $("m_depr").value=3; $("m_power").value=2; $("m_targetOp").value=5.0; $("m_note").value="サンプル（仮）";
+    $("f_laborUp").value=10; $("f_prodImprove").value=3; $("f_otherUp").value=2; $("f_outUp").value=5; $("f_targetOp").value=5;
     syncFutureLabels();
     updateAll();
   });
@@ -1167,7 +900,6 @@
 
   // init
   (function init(){
-    // seed one empty row
     addRowCast();
     addRowMach();
     syncFutureLabels();
